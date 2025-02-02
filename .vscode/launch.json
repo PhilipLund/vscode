@@ -1,0 +1,42 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Start experiment",
+      "type": "python",
+      "console": "integratedTerminal",
+      "request": "launch",
+      "preLaunchTask": "Clear",
+      "program": "${workspaceFolder}/src/experiment.py",
+      "cwd": "${workspaceFolder}/src",
+      "envFile": "${workspaceFolder}/.env",
+      "justMyCode": false,  // Change to false to enable stepping into packages
+    },
+    {
+      "name": "Python: Current file",
+      "type": "python",
+      "console": "integratedTerminal",
+      "request": "launch",
+      "preLaunchTask": "Create env file",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}/src",
+      "envFile": "${workspaceFolder}/.env",
+      "justMyCode": false,  // Change to false to enable stepping into packages
+    },
+    {
+      "name": "Python: Start App",
+      "type": "python",
+      "console": "integratedTerminal",
+      "request": "launch",
+      "module": "uvicorn",
+      "preLaunchTask": "Clear",
+      "cwd": "${workspaceFolder}/src",
+      "envFile": "${workspaceFolder}/.env",
+      "args": ["app_main:app","--reload", "--host", "0.0.0.0", "--port",  "8080", "--log-level", "info" ],
+      "justMyCode": false,  // Change to false to enable stepping into packages
+    },
+  ]
+}
